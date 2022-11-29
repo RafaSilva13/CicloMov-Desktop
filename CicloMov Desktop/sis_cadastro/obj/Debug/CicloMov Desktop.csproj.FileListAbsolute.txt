@@ -1,4 +1,3 @@
-D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov Desktop.csprojResolveAssemblyReference.cache
 D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov Desktop.csproj.GenerateResource.Cache
 D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov.frm_cliente.resources
 D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov.frm_usuario.resources
