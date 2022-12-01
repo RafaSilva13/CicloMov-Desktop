@@ -12,3 +12,4 @@ D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\bin\Debug\C
 D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\bin\Debug\CicloMov.pdb
 D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov.exe
 D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov.pdb
+D:\xampp\htdocs\luizim\GITHUB\CicloMov\CicloMov Desktop\sis_cadastro\obj\Debug\CicloMov Desktop.csprojResolveAssemblyReference.cache
