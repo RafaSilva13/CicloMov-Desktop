@@ -1,0 +1,10 @@
+        var inicio = "<?php if (isset($_GET['t'])) {
+                            echo $_GET['t'];
+                        } else {
+                            echo " ";
+                        } ?>";
+        var erroinicio = "<?php if (isset($_GET['lE'])) {
+                                echo 'lE';
+                            } else {
+                                echo ' ';
+                            } ?>";

@@ -31,17 +31,29 @@
             <a class="nav-link active" href="sobre.php" style="color: white;">Sobre nós</a>
           </li>
         </ul>
-        <form class="d-flex gap-4" role="search">
-          <a class="btn btn-light btn-sm btnlogin" href="login.php?t=l" type="button">Login</a>
-        </form>
+
+        <?php
+          session_start();
+            if(!isset($_SESSION["login"]) || $_SESSION["login"] == 0) {
+        ?>
+          <div class="d-flex gap-4" role="search">
+            <a class="btn btn-light btn-sm btnlogin" href="login.php" type="button">Login</a>
+          </div>
+        <?php
+          } 
+          else {
+        ?>
+
+          <div class="d-flex gap-4" role="search">
+            <a class="btn btn-danger btn-sm btnsair" href="login.php" type="button">Sair</a>
+          </div>
+
+        <?php
+          }
+        ?>
       </div>
     </div>
   </nav>
 
 </html>
 <!-- fim da navbar  -->
-<!-- script  -->
-
-</body>
-
-</html>

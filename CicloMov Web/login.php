@@ -1,16 +1,7 @@
 <?php
 // Inclui pagina header 
-include 'bootstrap/header.php';
+    include 'bootstrap/header.php';
 
-if (isset($_GET['lE'])) {
-?>
-    <script>
-        $(document).ready(function() {
-            $(".lserroToast").toast('show');
-        });
-    </script>
-<?php
-}
 ?>
 
 <!-- Flexbox container for aligning the toasts -->
@@ -66,11 +57,7 @@ if (isset($_GET['lE'])) {
             <div class="arealogin">
                 <h2 style="text-align:center; margin-top: 5px;">Login</h2>
 
-                <form action="verificar.php<?php if (isset($_GET['lp'])) {
-                                                echo '?lp';
-                                            } else {
-                                                echo '';
-                                            } ?>" id="formLogin" method="post" style="margin-top:20px;">
+                <form action="verificar.php" id="formLogin" method="post" style="margin-top:20px;">
                     <div class="mb-3">
                         <label for="usuario" class="form-label">Usuario</label>
                         <input type="text" class="form-control" id="usuario" name="usuario">
@@ -140,62 +127,75 @@ if (isset($_GET['lE'])) {
 
 <script>
     $(document).ready(function() {
-        var inicio = "<?php if (isset($_GET['t'])) {
-                            echo $_GET['t'];
-                        } else {
-                            echo " ";
-                        } ?>";
-        var erroinicio = "<?php if (isset($_GET['lE'])) {
-                                echo 'lE';
-                            } else {
-                                echo ' ';
-                            } ?>";
 
-        if (inicio === "l" || inicio === "lp" || erroinicio === "lE" || inicio === "") {
-            if ($('#login').ready(function() {
-                    $(".areacadastro").hide();
-                    $(".arealogin").show();
+        $('#login').ready(function() {
+            $(".areacadastro").hide();
+            $(".arealogin").show();
 
-                    $("#itemlogin").addClass('active');
-                    $("#itemcadastro").removeClass('active');
+            $("#itemlogin").addClass('active');
+            $("#itemcadastro").removeClass('active');
 
-                    $("#itemlogin").css("font-weight", "bold");
-                    $("#itemcadastro").css("font-weight", "400");
+            $("#itemlogin").css("font-weight", "bold");
+            $("#itemcadastro").css("font-weight", "400");
 
-                    $("#itemcadastro").css("color", "black");
-                }));
-        } else if (inicio === "c") {
-            if ($('#cadastro').ready(function() {
-                    $(".arealogin").hide();
-                    $(".areacadastro").show();
+            $("#itemcadastro").css("color", "black");
+        });
 
-                    $("#itemcadastro").addClass('active');
-                    $("#itemlogin").removeClass('active');
+        $('#login').click(function() {
+            $(".areacadastro").hide();
+            $(".arealogin").show();
 
-                    $("#itemcadastro").css("font-weight", "bold");
-                    $("#itemlogin").css("font-weight", "400");
+            $("#itemlogin").addClass('active');
+            $("#itemcadastro").removeClass('active');
 
-                    $("#itemlogin").css("color", "black");
-                }));
+            $("#itemlogin").css("font-weight", "bold");
+            $("#itemcadastro").css("font-weight", "400");
 
+            $("#itemcadastro").css("color", "black");
+        });
+        
+        $('#cadastro').click(function() {
+            $(".arealogin").hide();
+            $(".areacadastro").show();
+
+            $("#itemcadastro").addClass('active');
+            $("#itemlogin").removeClass('active');
+
+            $("#itemcadastro").css("font-weight", "bold");
+            $("#itemlogin").css("font-weight", "400");
+
+            $("#itemlogin").css("color", "black");
+        });
+
+        <?php 
+            if(isset($_SESSION["erro"]))
+            {
+                if($_SESSION["erro"] === 1) { 
+        ?>  
+                    console.log("Ola");
+                    $(".lserroToast").toast('show');
+        <?php 
+                    $_SESSION["erro"] = 0; 
+                }
+            };
+        ?>
+
+    });
+
+    $('#btnEntrar').click(function() {
+        if (document.getElementById("usuario").value === "" || document.getElementById("senha").value === "") {
+            $(".campovToast").toast('show');
+        } else {
+            $("#formLogin").submit();
         }
+    });
 
-        $('#btnEntrar').click(function() {
-            if (document.getElementById("usuario").value === "" || document.getElementById("senha").value === "") {
-                $(".campovToast").toast('show');
-            } else {
-                $("#formLogin").submit();
-            }
-        });
-
-        $('#btnCadastrar').click(function() {
-            if (document.getElementById("nomeCad").value === "" || document.getElementById("usuarioCad").value === "" || document.getElementById("emailCad").value === "" || document.getElementById("telefoneCad").value === "" || document.getElementById("senhaCad").value === "") {
-                $(".campovToast").toast('show');
-            } else {
-                $("#frmCadastro").submit();
-            }
-        });
-
+    $('#btnCadastrar').click(function() {
+        if (document.getElementById("nomeCad").value === "" || document.getElementById("usuarioCad").value === "" || document.getElementById("emailCad").value === "" || document.getElementById("telefoneCad").value === "" || document.getElementById("senhaCad").value === "") {
+            $(".campovToast").toast('show');
+        } else {
+            $("#frmCadastro").submit();
+        }
     });
 </script>
 
