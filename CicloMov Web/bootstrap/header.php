@@ -33,15 +33,14 @@
         </ul>
 
         <?php
-          session_start();
-            if(!isset($_SESSION["login"]) || $_SESSION["login"] == 0) {
+        session_start();
+        if (!isset($_SESSION["login"]) || $_SESSION["login"] == 0) {
         ?>
           <div class="d-flex gap-4" role="search">
             <a class="btn btn-light btn-sm btnlogin" href="login.php" type="button">Login</a>
           </div>
         <?php
-          } 
-          else {
+        } else {
         ?>
 
           <div class="d-flex gap-4" role="search">
@@ -49,7 +48,7 @@
           </div>
 
         <?php
-          }
+        }
         ?>
       </div>
     </div>

@@ -1,6 +1,7 @@
 <?php
-include 'bootstrap/header.php';
-include 'conexao.php'; ?>
+    include 'bootstrap/header.php';
+    include 'conexao.php'; 
+?>
 
 
 <div class="container">
@@ -20,7 +21,7 @@ include 'conexao.php'; ?>
             // output data of each row
             while ($row = mysqli_fetch_assoc($result)) { ?>
 
-                <div class="card" onclick="abrirModal(<?php echo $row['cod_ponto'] ?>)" style="width: 16rem; margin-top: 30px;" id="<?php echo $row['cod_ponto']; ?>" onclick="GetId(this.id)">
+                <div class="card" style="width: 16rem; margin-top: 30px;" id="<?php echo $row['cod_ponto']?>" onclick="AbrirModal(this.id)">
                     <iframe src="<?php echo $row['mapa']; ?>" style="border:0; whidt=100% " allowfullscreen="" loading="fast" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     <?php
@@ -72,21 +73,8 @@ include 'conexao.php'; ?>
         </div>
     </div>
 
-    <script>
-        function abrirModal(n) {
-            $('#confirmacao').modal('show');
-
-            $("#btnConfirmar").click(function() {
-                $.post("criarServico.php", {
-                        id= n
-                    },
-                    function() {
-                    });
-            });
-        }
-    </script>
 </div>
 
 <?php
-include 'bootstrap/footer.php';
+    include 'bootstrap/footer.php';
 ?>

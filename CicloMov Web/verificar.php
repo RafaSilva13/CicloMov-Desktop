@@ -6,6 +6,7 @@
     
     $usuario = $_POST['usuario'];
     $senha = $_POST['senha'];
+    
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
@@ -20,7 +21,6 @@
             echo $row['cod_clientes'];;
             $_SESSION["login"] = $row['cod_clientes'];
         }
-
         header('location: pontos.php');
     } 
     else {
