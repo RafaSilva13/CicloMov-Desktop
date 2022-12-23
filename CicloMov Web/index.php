@@ -3,8 +3,6 @@ include 'bootstrap/header.php';
 
 ?>
 
-
-
 <div class="imagem">
     <img class="imagem_inicio" src="img/fundo_pagina_n.jpg" alt="">
 </div>

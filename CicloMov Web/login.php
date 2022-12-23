@@ -82,12 +82,22 @@
             <div class="areacadastro">
                 <h2 style="text-align:center; margin-top: 5px;">Cadastro</h2>
 
-                <form action="cadastrar.php" id="frmCadastro" method="post" style="margin-top:20px;">
+                <form action="cadastro.php" id="frmCadastro" method="post" style="margin-top:20px;">
                     <div class="mb-3">
                         <label for="nomeCad" class="form-label">Nome Completo</label>
                         <input type="text" class="form-control" id="nomeCad" name="nomeCad">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="cpfCad" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpfCad" name="cpfCad">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefoneCad" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefoneCad" name="telefoneCad">
+                    </div>
+                    
                     <div class="mb-3">
                         <label for="usuarioCad" class="form-label">Usuario</label>
                         <input type="text" class="form-control" id="usuarioCad" name="usuarioCad">
@@ -95,13 +105,9 @@
 
                     <div class="mb-3">
                         <label for="emailCad" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="emailCad" name="emailCad">
+                        <input type="email" class="form-control" id="emailCad" name="emailCad">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="telefoneCad" class="form-label">Telefone</label>
-                        <input type="number" class="form-control" id="telefoneCad" name="telefoneCad">
-                    </div>
 
                     <div class="mb-3">
                         <label for="senhaCad" class="form-label">Senha</label>
@@ -191,7 +197,7 @@
     });
 
     $('#btnCadastrar').click(function() {
-        if (document.getElementById("nomeCad").value === "" || document.getElementById("usuarioCad").value === "" || document.getElementById("emailCad").value === "" || document.getElementById("telefoneCad").value === "" || document.getElementById("senhaCad").value === "") {
+        if (document.getElementById("telefoneCad").value === "" || document.getElementById("nomeCad").value === "" || document.getElementById("usuarioCad").value === "" || document.getElementById("emailCad").value === "" || document.getElementById("cpfCad").value === "" || document.getElementById("senhaCad").value === "") {
             $(".campovToast").toast('show');
         } else {
             $("#frmCadastro").submit();
