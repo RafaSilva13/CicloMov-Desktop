@@ -3,6 +3,7 @@
     include 'conexao.php';
 
     $id = $_POST['id'];
+    $tempo=$_POST['time'].':00';
 
     if(isset($_SESSION["login"])) {
         $user = $_SESSION['login'];
@@ -14,7 +15,7 @@
     }
     
     $sql = "INSERT INTO servicos (id_cliente, id_ponto, tempo_permanencia)
-    VALUES ($user, $id, 0)";
+    VALUES ($user, $id, $tempo)";
 
     if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
@@ -23,6 +24,8 @@
     }
 
     mysqli_close($conn);
+    // header('Location: pontos.php');
+
 
 
 ?>

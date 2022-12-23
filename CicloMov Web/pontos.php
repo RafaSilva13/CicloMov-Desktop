@@ -1,6 +1,6 @@
 <?php
-    include 'bootstrap/header.php';
-    include 'conexao.php'; 
+include 'bootstrap/header.php';
+include 'conexao.php';
 ?>
 
 
@@ -21,7 +21,7 @@
             // output data of each row
             while ($row = mysqli_fetch_assoc($result)) { ?>
 
-                <div class="card" style="width: 16rem; margin-top: 30px;" id="<?php echo $row['cod_ponto']?>" onclick="AbrirModal(this.id)">
+                <div class="card" style="width: 16rem; margin-top: 30px;" id="<?php echo $row['cod_ponto'] ?>" onclick="AbrirModal(this.id)">
                     <iframe src="<?php echo $row['mapa']; ?>" style="border:0; whidt=100% " allowfullscreen="" loading="fast" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     <?php
@@ -61,24 +61,38 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="processa_ponto.php" method="post">
-                    
-                    <div class="modal-body">
-                        <p>Selecione um tempo de uso</p>
-                        <input type="time" name="time">
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <input type="submit" class="btn btn-primary" id="btnConfirmar" name="tempo" value="Confirmar" <?php //if(isset($_SESSION['tempo_restante'])) echo 'disabled';?>>
-                    </div>
-                </form>
+
+                <div class="modal-body">
+                    <p>Selecione um tempo de uso</p>
+                    <input type="time" name="time">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirmar">Confirmar</button>
+                </div>
             </div>
         </div>
     </div>
 
 </div>
 
+<button class="btn btn-success"  onclick="AbrirToast()">Toast Me UPPPP</button>
+
+<div class="toast" id="toast-sucess" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="mr-auto">Sucesso</strong>
+
+
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="toast-body">
+        Locação concluída
+    </div>
+</div>
+
 <?php
-    include 'bootstrap/footer.php';
+include 'bootstrap/footer.php';
 ?>

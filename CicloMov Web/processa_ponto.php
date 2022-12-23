@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-    include('class/Cliente.Class.php');
     include 'conexao.php';
 
     $cod = $_SESSION['login'];

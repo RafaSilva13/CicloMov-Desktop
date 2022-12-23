@@ -9,6 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -49,20 +51,15 @@
             <div class="d-flex gap-4 text-light" role="search" style="margin-right: 2rem;">
               <h5>Tempo livre <span data-countdown="<?php echo date('Y/m/d') . ' ' . $_SESSION['tempo_restante']; ?>"></span> </h5>
             </div>
-
+            
             <script>
               $('[data-countdown]').each(function() {
                 var $this = $(this),
                   finalDate = $(this).data('countdown');
                 $this.countdown(finalDate, function(event) {
                   $this.html(event.strftime('%H:%M:%S'));
-                  if(event.strftime('%H:%M:%S')=='00:00:00'){
-                    <?php $_SESSION['fim_tempo']="sim"; ?>
-                  }
+              
                 });
-
-
-
               });
             </script>
 
