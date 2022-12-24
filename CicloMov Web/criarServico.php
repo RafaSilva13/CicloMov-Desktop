@@ -1,31 +1,31 @@
 <?php
 
-    include 'conexao.php';
+include 'conexao.php';
+session_start();
 
-    $id = $_POST['id'];
-    $tempo=$_POST['time'].':00';
+$id = $_POST['idPonto'];
+$tempo = $_POST['time'] . ':00';
 
-    if(isset($_SESSION["login"])) {
-        $user = $_SESSION['login'];
-    }
+// $_SESSION["tempo"] = $tempo;
+// date_default_timezone_set('America/Sao_Paulo');
+// $hora = date('H:i:s');
+// $v = explode(':', $_SESSION['tempo']);
+// $_SESSION['tempo_restante'] = date('H:i:s', strtotime("{$hora} + {$v[0]} hours {$v[1]} minutes {$v[2]} seconds"));
 
-    // Check connection
-    if (!$conn) {
+$user = $_SESSION['login'];
+
+// Check connection
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-    }
-    
-    $sql = "INSERT INTO servicos (id_cliente, id_ponto, tempo_permanencia)
-    VALUES ($user, $id, $tempo)";
+}
 
-    if (mysqli_query($conn, $sql)) {
+$sql = "INSERT INTO servicos (id_clientes, id_ponto, tempo_permanencia) VALUES ('$user', '$id', '$tempo')";
+
+
+if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
-    } else {
+} else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+}
 
-    mysqli_close($conn);
-    // header('Location: pontos.php');
-
-
-
-?>
+mysqli_close($conn);

@@ -3,6 +3,10 @@ include 'bootstrap/header.php';
 include 'conexao.php';
 ?>
 
+<div class="alert alert-primary alert-dismissible" id="alert" role="alert" style="display: none;">
+    <h5>Confirmado!</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
 <div class="container">
 
@@ -64,7 +68,7 @@ include 'conexao.php';
 
                 <div class="modal-body">
                     <p>Selecione um tempo de uso</p>
-                    <input type="time" name="time">
+                    <input type="time" name="time" id="time">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -76,7 +80,11 @@ include 'conexao.php';
 
 </div>
 
-<button class="btn btn-success"  onclick="AbrirToast()">Toast Me UPPPP</button>
+
+
+
+
+<!-- <button class="btn btn-success" onclick="AbrirToast()">Toast Me UPPPP</button> -->
 
 <div class="toast" id="toast-sucess" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
