@@ -130,6 +130,7 @@ h3.texto_inicio {
 .segundacoluna {
     margin-top: 60px;
     margin-left: 0px;
+
 }
 
 .carousel.slide {
@@ -209,7 +210,7 @@ h3.texto_inicio {
     font-weight: bold;
 }
 
-footer {
+/* footer {
     width: 100%;
     height: 75px;
     background-color: rgb(23, 43, 56);
@@ -220,7 +221,7 @@ footer {
     bottom: 0;
     position: fixed;
     text-align: center;
-}
+} */
 
 .w3-light-grey {
     width: 900px;
