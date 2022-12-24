@@ -148,9 +148,10 @@
             this.Controls.Add(this.txtCodigoDeletarEstado);
             this.Controls.Add(this.ckbConfirmacaoEstado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDeletarEstados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DeletarEstados";
+            this.Text = "Deletar";
             ((System.ComponentModel.ISupportInitialize)(this.barraClientes)).EndInit();
             this.barraClientes.ResumeLayout(false);
             this.barraClientes.PerformLayout();

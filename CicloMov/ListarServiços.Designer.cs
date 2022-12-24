@@ -220,6 +220,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPesquisarClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListarServicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Serviços";

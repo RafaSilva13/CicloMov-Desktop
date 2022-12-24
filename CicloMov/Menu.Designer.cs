@@ -31,6 +31,7 @@ namespace CicloMov
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.btnAreaClientes = new System.Windows.Forms.Button();
             this.btnAreaPontos = new System.Windows.Forms.Button();
             this.btnAreaEstados = new System.Windows.Forms.Button();
@@ -128,6 +129,7 @@ namespace CicloMov
             this.Controls.Add(this.btnAreaEstados);
             this.Controls.Add(this.btnAreaPontos);
             this.Controls.Add(this.btnAreaClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

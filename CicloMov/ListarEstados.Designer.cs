@@ -261,6 +261,7 @@
             this.Controls.Add(this.txtPesquisarEstados);
             this.Controls.Add(this.barraEstados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListarEstados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estados";
